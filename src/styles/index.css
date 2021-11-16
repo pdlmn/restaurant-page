@@ -1,0 +1,40 @@
+/* FOR ELEMENTS THAT ARE SHARED BETWEEN ALL PAGES */
+body {
+  margin: 0;
+  padding: 0;
+  background: rgb(210, 250, 210);
+}
+
+.header {
+  background-image: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.9)), url('../img/header-food.jpg');
+  height: 240px;
+  background-position: center;
+  background-size: cover;
+}
+
+nav {
+  padding-top: 64px;
+}
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+  background: rgba(0, 223, 153, .65);
+  padding: 0;
+  margin: 0;
+}
+
+.nav-item {
+  padding: 20px;
+  flex: 1;
+  cursor: pointer;
+  letter-spacing: 2px;
+}
+
+.nav-item:hover {
+  background: rgba(0, 223, 153, .5);
+}
+
+.nav-item-active {
+  background: rgba(0, 223, 153, .5);
+}
