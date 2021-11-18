@@ -1,0 +1,60 @@
+/* MENU STYLING */
+.menu {
+  min-width: 300px;
+  width: 100%;
+}
+
+.menu-categories,
+.menu-category {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-categories {
+  gap: 16px;
+}
+
+.menu-category {
+  width: 50%;
+  background: rgb(220, 210, 210);
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 12px;
+  border: 5px solid rgb(220, 210, 210);
+  content-size: border-box;
+  border-radius: 6px;
+}
+
+.active-menu {
+  background: rgb(250, 250, 250);
+  border: 5px solid rgb(250, 250, 250);
+}
+
+.menu-items {
+  gap: 16px;
+}
+
+.menu-item-name {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu-item h3 {
+  font-size: 1.2rem;
+  letter-spacing: 3px;
+  margin: 15px 4px;
+}
+
+.item-price {
+  margin: 15px 4px;
+  font-size: 1.15rem;
+  color: rgb(31, 174, 126);
+  font-weight: bold;
+  font-style: italic;
+}
+
+.menu-item p {
+  margin: 4px;
+}
