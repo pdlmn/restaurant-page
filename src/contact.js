@@ -28,7 +28,7 @@ function createPeopleCards(people) {
 
   for (let person of people) {
     let card = document.createElement('div');
-    let info = document.createElenent('div');
+    let info = document.createElement('div');
 
     let name = document.createElement('h3');
     let position = document.createElement('p')
@@ -40,8 +40,9 @@ function createPeopleCards(people) {
     email.textContent = person.email;
     photo.src = `./img/${person.photo}`;
 
-    card.classList.add('flex');
-    info.classList.add('flex-column'); 
+    card.classList.add('flex', 'contact-card');
+    info.classList.add('flex-column', 'contact-card-info'); 
+    cards.classList.add('flex-centered', 'flex-column', 'contact-cards');
 
     info.append(name, position, email);
     card.append(photo, info);
@@ -57,6 +58,7 @@ export default function contact() {
 
   article.append(
     createContactHeader(),
+    createPeopleCards(PEOPLE),
   );
   return article
 }

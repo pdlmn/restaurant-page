@@ -1,5 +1,6 @@
 import './styles/index.css';
 import './styles/menu.css';
+import './styles/contact.css';
 import './styles/utils.css';
 import home from './home.js';
 import menu from './menu.js';
