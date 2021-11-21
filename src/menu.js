@@ -1,16 +1,16 @@
-const foodMenuItems = [
+const FOOD_MENU_ITEMS = [
   MenuItem('Pizza', '15.50$', 'Delicious whole wheat pizza with vegan cheese and olive toppings.'),
-  MenuItem('Pizza', '15.50$', 'Delicious whole wheat pizza with vegan cheese and olive toppings.'),
-  MenuItem('Pizza', '15.50$', 'Delicious whole wheat pizza with vegan cheese and olive toppings.'),
-  MenuItem('Pizza', '15.50$', 'Delicious whole wheat pizza with vegan cheese and olive toppings.'),
-  MenuItem('Pizza', '15.50$', 'Delicious whole wheat pizza with vegan cheese and olive toppings.'),
+  MenuItem('Pasta', '10.50$', 'Whole wheat pasta with tomato sauce and meaty soy balls.'),
+  MenuItem('Carrot Cake', '12.90$', 'Sweet and healthy dessert with date sugar instead of the regular sugar.'),
+  MenuItem('Qinoa Salad', '8.00$', 'Salad that is full of vitamins and antioxidants.'),
+  MenuItem('Veggie Burger', '10.25$', 'Burger with vegetables, spicy sauce and a veggie pattie.'),
 ];
-const drinksMenuItems = [
-  MenuItem('Cola', '15.50$', 'Delicious whole wheat pizza with vegan cheese and olive toppings.'),
-  MenuItem('Cola', '15.50$', 'Delicious whole wheat pizza with vegan cheese and olive toppings.'),
-  MenuItem('Cola', '15.50$', 'Delicious whole wheat pizza with vegan cheese and olive toppings.'),
-  MenuItem('Cola', '15.50$', 'Delicious whole wheat pizza with vegan cheese and olive toppings.'),
-  MenuItem('Cola', '15.50$', 'Delicious whole wheat pizza with vegan cheese and olive toppings.'),
+const DRINKS_MENU_ITEMS = [
+  MenuItem('Green Tea', '5.50$', 'Classic green tea in a teapot.'),
+  MenuItem('Hibiskus Tea', '6.00$', 'One of the healthies beverages on the planet. Also called Red Tea.'),
+  MenuItem('Orange Juice', '12.00$', 'Freshly squeezed orange juice.'),
+  MenuItem('Soy Milkshake', '15.00$', 'Vanilla or espresso flavored soy milkshake.'),
+  MenuItem('Water', 'FREE', 'Water.'),
 ];
 
 function MenuItem(name, price, description) {
@@ -21,7 +21,7 @@ function createMenuHeader() {
   const header = document.createElement('header');
   const h2 = document.createElement('h2');
 
-  h2.textContent = 'Our menu';
+  h2.textContent = 'Our Menu';
 
   header.classList.add('content-header');
   h2.classList.add('flex-centered');
@@ -34,24 +34,12 @@ function createMenuHeader() {
 function toggleMenuCategories(e) {
   if (e.target.dataset.toggled === 'true') return
 
-  const food = document.querySelector('#food');
-  const drinks = document.querySelector('#drinks');
-  const foodMenu = document.querySelector('#food-menu');
-  const drinksMenu = document.querySelector('#drinks-menu');
+  const menus = document.querySelectorAll('.menu-items');
+  const menuCategories = document.querySelectorAll('.menu-category');
 
-  food.addEventListener('click', () => {
-    food.classList.add('active-menu');
-    drinks.classList.remove('active-menu');
-    foodMenu.classList.remove('hidden');
-    drinksMenu.classList.add('hidden');
-  });
-
-  drinks.addEventListener('click', () => {
-    food.classList.remove('active-menu');
-    drinks.classList.add('active-menu');
-    foodMenu.classList.add('hidden');
-    drinksMenu.classList.remove('hidden');
-  });
+  menus.forEach(menu => menu.classList.toggle('hidden'));
+  menuCategories.forEach(category => category.classList.toggle('active-menu'));
+  menuCategories.forEach(category => category.dataset.toggled = (category.dataset.toggled === 'true') ? 'false' : 'true');
 }
 
 function createMenuCategories() {
@@ -65,9 +53,6 @@ function createMenuCategories() {
 
   food.dataset.toggled = 'true';
   drinks.dataset.toggled = 'false';
-
-  food.dataset.menu = 'food';
-  drinks.dataset.menu = 'drinks';
 
   food.textContent = 'Food';
   drinks.textContent = 'Drinks';
@@ -124,8 +109,8 @@ function createMenu() {
 
   menu.append(
     createMenuCategories(),
-    createMenuItems(foodMenuItems, 'food', false),
-    createMenuItems(drinksMenuItems, 'drinks', true)
+    createMenuItems(FOOD_MENU_ITEMS, 'food', false),
+    createMenuItems(DRINKS_MENU_ITEMS, 'drinks', true)
   )
   menuWrapper.append(menu);
 
@@ -141,23 +126,4 @@ export default function menu() {
   );
   return article
 }
-
-// const food = document.querySelector('#food');
-// const drinks = document.querySelector('#drinks');
-// const foodMenu = document.querySelector('#food-menu');
-// const drinksMenu = document.querySelector('#drinks-menu');
-
-// food.addEventListener('click', () => {
-//   food.classList.add('active-menu');
-//   drinks.classList.remove('active-menu');
-//   foodMenu.classList.remove('hidden');
-//   drinksMenu.classList.add('hidden');
-// });
-
-// drinks.addEventListener('click', () => {
-//   food.classList.remove('active-menu');
-//   drinks.classList.add('active-menu');
-//   foodMenu.classList.add('hidden');
-//   drinksMenu.classList.remove('hidden');
-// });
 

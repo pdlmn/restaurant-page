@@ -1,12 +1,12 @@
 /* FOR ELEMENTS THAT ARE SHARED BETWEEN ALL PAGES */
-
-/* NAVBAR STYLING */
 body {
+  font-family: sans-serif;
   margin: 0;
   padding: 0;
   background: rgb(240, 230, 230);
 }
 
+/* NAVBAR STYLING */
 .banner {
   background-image: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.9)), url('../img/header-food.jpg');
   height: 300px;
@@ -58,8 +58,9 @@ nav ul {
 }
 
 .content-header {
-  padding: 4px;
-  margin-bottom: 4px;
+  height: 10vh;
+  padding: 8px;
+  margin-bottom: 8px;
 }
 
 h2 {

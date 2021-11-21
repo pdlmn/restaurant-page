@@ -1,5 +1,5 @@
-const p1Content = 'The Green Bowl was founded by George the Jorj at the start of lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
-const p2Content = 'George the Jorj was a fine man with a passion for cooking, health and lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+const P1_CONTENT = 'The Green Bowl was founded by George the Jorj at the start of lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+const P2_CONTENT = 'George the Jorj was a fine man with a passion for cooking, health and lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
 const buttonContent = 'Discover Our Menu';
 
 function createHomeHeader() {
@@ -23,8 +23,8 @@ function createDescription() {
   const p1 = document.createElement('p');
   const p2 = document.createElement('p');
 
-  p1.append(p1Content);
-  p2.append(p2Content);
+  p1.append(P1_CONTENT);
+  p2.append(P2_CONTENT);
 
   return [p1, p2]
 }
@@ -45,6 +45,7 @@ function createButton() {
 
 export default function home() {
   const article = document.createElement('article');
+
   article.append(
     createHomeHeader(),
     ...createDescription(),
